@@ -131,5 +131,6 @@ Here are some examples to show how your function should work. You may assume tha
 
 ### Solution:
 ```
-
+def transpose(m: list):
+	return [[m[j][i] for j in range (len(m))] for i in range (len(m[0]))]
 ```

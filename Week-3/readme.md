@@ -50,13 +50,20 @@ True
 ### Solution:
 ```
 def expanding(l: list):
+	# use flag as our answer to keep in check
 	flag = True
+		# itereating over the integers in list
 		for i in range(len(l) - 2):
+			# maintaining the previously seen absolute difference value in prev
 			prev = abs(l[i] - l[i + 1])
+			# maintaining the currently seen absolute difference value in curr
 			curr = abs(l[i + 1] - l[i + 2])
+			# check if it is strictly increasing
 			if prev < curr:
+				# till the condition holds continue to check throughout the list
 				continue
 			else:
+				# stop execution and return False as soon as one adjacent difference is inconsistent
 				return False
 	return flag
 ```
@@ -78,12 +85,19 @@ Here are some examples to show how your function should work:
 ### Solution:
 ```
 def sumsquare(l: list):
+	# initializing sum of odd and even squared number as 0
 	sum_odd, sum_even = 0, 0
+	# iterating through all the integers present
 	for n in l:
+		# check if the number is odd
 		if n % 2:
+			# add odd number's square to sum_odd
 			sum_odd += n ** 2
+		# if it is not odd, then obviously, it has to be even (hence else)
 		else:
+			# add even number's square to sum_even
 			sum_even += n ** 2
+	# return the result in the required format (see it's being converted to a list)
 	return [sum_odd, sum_even]
 ```
 
@@ -132,5 +146,6 @@ Here are some examples to show how your function should work. You may assume tha
 ### Solution:
 ```
 def transpose(m: list):
-	return [[m[j][i] for j in range (len(m))] for i in range (len(m[0]))]
+	# using list comprehension to populate a transpose matrix list
+	return [[m[j][i] for j in range(len(m))] for i in range(len(m[0]))]
 ```
